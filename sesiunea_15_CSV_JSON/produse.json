@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "nume_produs": "Laptop",
+        "pret": "3000",
+        "cantitate": "5"
+    },
+    {
+        "id": "2",
+        "nume_produs": "Mouse",
+        "pret": "50",
+        "cantitate": "10"
+    },
+    {
+        "id": "3",
+        "nume_produs": "Tastatura",
+        "pret": "150",
+        "cantitate": "8"
+    },
+    {
+        "id": "4",
+        "nume_produs": "Monitor",
+        "pret": "700",
+        "cantitate": "3"
+    }
+]

@@ -1,0 +1,2 @@
+Acesta este un exemplu de text.
+Liniile vor fi copiate în alt fișier.

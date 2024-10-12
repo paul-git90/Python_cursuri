@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--reprezinta Pachetele pe care clasele si metodele __init__ le vor accesa din alte foldere-->
+gestionare_angajati/
+    ├── companie/
+    │   ├── __init__.py       # <- acest fișier este necesar
+    ├── departament/
+    │   ├── __init__.py       # <- acest fișier este necesar
+    ├── informatii_angajati/
+    │   ├── __init__.py       # <- acest fișier este necesar
+    ├── tests/
+    │   ├── __init__.py       # <- acest fișier este necesar
+<!--Rulare proiect-->
+1. Verifică structura proiectului
+
+gestionare_angajati/
+    ├── companie/
+    │   ├── __init__.py
+    │   ├── companie.py
+    ├── departament/
+    │   ├── __init__.py
+    │   ├── departament.py
+    │   ├── departament_hr.py
+    │   ├── departament_vanzari.py
+    │   ├── departament_operational.py
+    ├── informatii_angajati/
+    │   ├── __init__.py
+    │   ├── persoana.py
+    │   ├── angajat.py
+    │   ├── manager.py
+    ├── tests/
+    │   ├── __init__.py
+    │   ├── test_companie.py
+    └── main.py
+
+2. Setează mediul virtual (opțional, dar recomandat)
+<!--
+Este o bună practică să creezi un mediu virtual pentru fiecare proiect Python, pentru a izola dependențele.
+În terminal, navighează în folderul proiectului gestionare_angajati/ și rulează:
+python -m venv venv
+Activează mediul virtual:
+Windows: venv\Scripts\activate
+macOS/Linux: source venv/bin/activate
+După activarea mediului virtual, instalează orice biblioteci necesare, dacă sunt specificate.
+-->
+python -m venv venv
+venv\Scripts\activate
+
+3. Editează și rulează main.py
+<!--
+Fișierul main.py ar trebui să fie punctul de intrare pentru proiectul tău, unde rulezi aplicația.
+Exemplu simplu de conținut pentru main.py:
+-->
+from companie.companie import Companie
+from informatii_angajati.angajat import Angajat
+
+# Inițializare angajat
+angajat1 = Angajat("Popescu", "Ion", 5000)
+
+# Afișăm informațiile despre angajat
+angajat1.descrie()
+
+# Afișăm numele complet al angajatului
+print(angajat1.nume_complet())
+
+# Afișăm salariul lunar și anual
+print(f"Salariu lunar: {angajat1.salariu_lunar()}")
+print(f"Salariu anual: {angajat1.salariu_anual()}")
+
+# Creștem salariul cu 10%
+angajat1.marire_salariu(10)
+print(f"Salariu lunar după mărire: {angajat1.salariu_lunar()}")
+
+# Aici poți adăuga cod pentru a testa și celelalte funcționalități
+
+4. Rulează proiectul
+<!--
+Pentru a rula proiectul, asigură-te că ești în directorul
+rădăcină al proiectului (gestionare_angajati/) și rulează următoarea comandă în terminal:
+python main.py
+Dacă totul este configurat corect, ar trebui să vezi rezultatele afișate în terminal conform funcțiilor și metodelor
+definite în clasele tale.
+-->
+python main.py
+
+5. Testează codul
+<!--
+Dacă ai scris teste în tests/test_companie.py, poți să rulezi testele folosind un framework de testare
+precum unittest sau pytest. Pentru a rula testele cu unittest:
+python -m unittest discover -s tests
+Dacă folosești pytest, instalează-l în mediul virtual:
+pip install pytest
+Apoi rulează testele:
+pytest
+-->
+python -m unittest discover -s tests
+
+6. Depanare (dacă este necesar)
+<!--
+Dacă întâlnești erori de tip ImportError sau ModuleNotFoundError, verifică din nou dacă fișierele __init__.py
+sunt la locul lor și că ai importat corect modulele.
+Verifică și calea din care rulezi scripturile.
+Asigură-te că rulezi din rădăcina proiectului (gestionare_angajati/).
+-->
+
+7. Îmbunătățiri și funcționalități extra
+<!--
+După ce codul tău de bază funcționează, poți începe să adaugi noi funcționalități folosind pilonii OOP,
+adăugând mai multe funcții sau integrând alte module.
+Acum proiectul tău ar trebui să ruleze corect și să fie modular, respectând cerințele OOP.
+-->

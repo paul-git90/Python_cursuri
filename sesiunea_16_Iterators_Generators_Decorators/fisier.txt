@@ -1,0 +1,1 @@
+Exemplu folosind contextlib pentru context managers.

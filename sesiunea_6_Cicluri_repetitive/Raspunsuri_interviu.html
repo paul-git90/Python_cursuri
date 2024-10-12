@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Răspunsuri</title>
+</head>
+<body>
+    <h1>Răspunsuri la întrebări</h1>
+
+    <h2>1. Când folosim <code>while</code> și când folosim <code>for</code>?</h2>
+    <p>
+        <strong><code>while</code>:</strong> Folosim <code>while</code> atunci când nu știm dinainte câte iterații vor fi necesare. De obicei, <code>while</code> este utilizat pentru bucle care se repetă atâta timp cât o anumită condiție este adevărată. De exemplu, când așteptăm un input specific de la utilizator sau când iterăm până când găsim o soluție.
+    </p>
+    <pre>
+        <code>
+        i = 0
+        while i &lt; 5:
+            print(i)
+            i += 1
+        </code>
+    </pre>
+    <p>
+        <strong><code>for</code>:</strong> Folosim <code>for</code> atunci când știm dinainte câte iterații dorim să facem. Este utilizat pentru a itera prin elementele unui obiect iterabil (cum ar fi liste, tuple, stringuri, sau intervale).
+    </p>
+    <pre>
+        <code>
+        for i in range(5):
+            print(i)
+        </code>
+    </pre>
+
+    <h2>2. Ce este obligatoriu să avem în interiorul blocului de cod <code>while</code>?</h2>
+    <p>
+        În interiorul blocului <code>while</code>, trebuie să existe o instrucțiune care să modifice condiția buclei astfel încât bucla să se poată opri la un moment dat. Altfel, bucla ar deveni infinită. De obicei, aceasta este o actualizare a variabilei de control.
+    </p>
+    <pre>
+        <code>
+        i = 0
+        while i &lt; 5:
+            print(i)
+            i += 1  # Actualizarea variabilei de control
+        </code>
+    </pre>
+
+    <h2>3. Ce reprezintă funcția <code>range</code>?</h2>
+    <p>
+        Funcția <code>range</code> generează o secvență de numere. Este adesea utilizată în buclele <code>for</code> pentru a specifica intervalul de iterații. Poate lua până la trei argumente: start (început), stop (sfârșit, exclusiv) și step (pas).
+    </p>
+    <pre>
+        <code>
+        for i in range(1, 10, 2):  # Generază 1, 3, 5, 7, 9
+            print(i)
+        </code>
+    </pre>
+
+    <h2>4. Când alegem să folosim <code>break</code> într-o structură repetitivă?</h2>
+    <p>
+        Folosim <code>break</code> pentru a ieși din buclă înainte ca aceasta să-și termine toate iterațiile. De obicei, <code>break</code> este folosit atunci când o anumită condiție este îndeplinită și nu mai dorim să continuăm cu iterațiile.
+    </p>
+    <pre>
+        <code>
+        for i in range(10):
+            if i == 5:
+                break  # Ieșim din buclă când i este 5
+            print(i)
+        </code>
+    </pre>
+
+    <h2>5. Când alegem să folosim <code>continue</code> într-o structură repetitivă?</h2>
+    <p>
+        Folosim <code>continue</code> pentru a sări peste restul codului din buclă pentru iterația curentă și a trece direct la următoarea iterație. Este util atunci când dorim să evităm anumite condiții specifice în interiorul unei bucle.
+    </p>
+    <pre>
+        <code>
+        for i in range(10):
+            if i % 2 == 0:
+                continue  # Sărim peste iterațiile pentru numere pare
+            print(i)
+        </code>
+    </pre>
+
+    <h2>6. Ce face <code>else</code>-ul dintr-un <code>for/else</code> și <code>while/else</code>?</h2>
+    <p>
+        Blocul <code>else</code> atașat unui <code>for</code> sau <code>while</code> se execută doar dacă bucla se termină în mod normal (fără a se întâlni un <code>break</code>). Dacă bucla este întreruptă de un <code>break</code>, atunci blocul <code>else</code> nu se execută.
+    </p>
+    <pre>
+        <code>
+        for i in range(5):
+            if i == 3:
+                break
+            print(i)
+        else:
+            print("Bucla s-a terminat fără a întâlni un `break`")
+
+        # Va afișa:
+        # 0
+        # 1
+        # 2
+        </code>
+    </pre>
+    <pre>
+        <code>
+        i = 0
+        while i &lt; 5:
+            if i == 3:
+                break
+            print(i)
+            i += 1
+        else:
+            print("Bucla s-a terminat fără a întâlni un `break`")
+
+        # Va afișa:
+        # 0
+        # 1
+        # 2
+        </code>
+    </pre>
+
+    <h2>7. Dacă avem un <code>while/else</code>, în ce caz nu se va executa codul din <code>else</code>?</h2>
+    <p>
+        Codul din blocul <code>else</code> nu se va executa dacă bucla <code>while</code> este întreruptă de un <code>break</code>. Dacă bucla se termină în mod normal (adică condiția <code>while</code> devine falsă), atunci blocul <code>else</code> se va executa.
+    </p>
+    <pre>
+        <code>
+        i = 0
+        while i &lt; 5:
+            if i == 3:
+                break
+            print(i)
+            i += 1
+        else:
+            print("Bucla s-a terminat fără a întâlni un `break`")
+
+        # În acest caz, "else" nu se va executa pentru că bucla s-a oprit la `break`
+        </code>
+    </pre>
+
+</body>
+</html>
